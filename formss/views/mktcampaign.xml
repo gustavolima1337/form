@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="kami_forms.campanhamkt" name="Kami Forms - Input Nome">
+    <form>
+      <div>
+        <label for="campaign_name">*Nome da campanha:</label>
+        <input type="text" placeholder="Nomeie a campanha que deseja solicitar"/>
+        <br></br>
+        <br></br>
+        <label for="campaign_type">Tipo da Campanha</label>
+        <select>
+          <option value="valor3"></option>
+          <option value="valor1">Lançamento</option>
+          <option value="valor2">Branding</option>
+          <option value="valor3">Comercial(aumento de ticket)</option>
+          <option value="valor3">Comercial(aumento de fluxo)</option>
+          <option value="valor3">Encantamento</option>
+          <option value="valor3">Reativação</option>
+        </select><br></br><br></br>
+        <legend>Ano:</legend>
+        <input type='radio' id='2021' name="ano"/>
+        <label for='2021'>2021</label><br></br><br></br>
+        <input type='radio' id='2022' name="ano"/>
+        <label for='2022'>2022</label><br></br><br></br>
+        <input type='radio' id='2023' name="ano"/>
+        <label for='2023'>2023</label><br></br><br></br>
+
+
+        <label for="message">Briefing da campanha:</label><br></br>
+        <textarea id="message" rows="4" cols="50"></textarea><br></br><br></br>
+
+        <legend>Ano:</legend>
+        <input type='radio' id='2021' name="ano"/>
+        <label for='trimestre'>1º Trimestre</label><br></br><br></br>
+        <input type='radio' id='2022' name="ano"/>
+        <label for='trimestre'>2º Trimestre</label><br></br><br></br>
+        <input type='radio' id='2023' name="ano"/>
+        <label for='trimestre'>3º Trimestre</label><br></br><br></br>
+        <input type='radio' id='2023' name="ano"/>
+        <label for='trimestre'>4º Trimestre</label><br></br><br></br>
+        
+
+        <label for="data_vencimento">Data de vencimento:</label>
+        <input type="date" id="vencimento"/><br></br><br></br>
+
+        <label for="hora_vencimento">Hora de vencimento:</label>
+        <input type="time" id="timeInputField"/><br></br><br></br>
+        
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </template>
+</odoo>

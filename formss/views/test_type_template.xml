@@ -1,0 +1,9 @@
+<odoo>
+  <template id="kami_forms.maladireta">             
+    <select name="responsavel">
+      <t t-foreach="users" t-as="user">
+        <option t-att-value="user.id">user.name</option>        
+      </t>      
+    </select>   
+  </template>
+</odoo>
