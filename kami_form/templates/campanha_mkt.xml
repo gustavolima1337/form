@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="campanhamkt" name="Kami Forms - Input Nome">
+        <title>Calendário de Campanhas MKT</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Calendário de Campanhas MKT.</h3>
+                        <p><i>
+                        Preencha o formulário ao lado para criar um Calendário de Campanhas MKT.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/campanhamkt" enctype="multipart/form-data">
+                            <label>*Empresa:</label><br/>
+
+                            <input required="required" name="empresa" type="radio" value='Distribuidora BRT'>Distribuidora BRT</input><br/><br/>
+                            <input required="required" name="empresa" type="radio" value='Distribuidora PT'>Distribuidora PT</input><br/><br/>
+                            <input required="required" name="empresa" type="radio" value='Salão'>Salão</input><br/><br/>
+                            <input required="required" name="empresa" type="radio" value='Lojas'>Lojas</input><br/><br/>
+                            <input required="required" name="empresa" type="radio" value='Kiosks'>Kiosks</input><br/><br/><br/>
+
+                            <label>*Ano:</label><br/>
+                            <input required="required" name="ano" type="radio" value='2021'>2021</input><br/><br/>
+                            <input required="required" name="ano" type="radio" value='2022'>2022</input><br/><br/>
+                            <input required="required" name="ano" type="radio" value='2023'>2023</input><br/><br/>
+
+                            <label>*Periodo:</label><br/>
+                            <input required="required" name="trimestre" type="radio" value='1º Trimestre'>1º Trimestre</input><br/><br/>
+                            <input required="required" name="trimestre" type="radio" value='2º Trimestre'>2º Trimestre</input><br/><br/>
+                            <input required="required" name="trimestre" type="radio" value='3º Trimestre'>3º Trimestre</input><br/><br/>
+                            <input required="required" name="trimestre" type="radio" value='4º Trimestre'>4º Trimestre</input><br/><br/>
+
+                            <label>*Início:</label><br/>
+                            <input required="required" type="datetime-local" name="data_inicio"/><br/><br/><br/>
+
+                            <label>*Vencimento do Planejamento:</label><br/>
+                            <input required="required" type="datetime-local" name="data_vencimento"/><br/><br/><br/>
+
+                            <label>*Tipos de Campanha:</label><br/>
+                            <input type="checkbox" name="lancamento" value="Lançamento"> Lançamento</input><br/><br/>
+                            <input type="checkbox" name="branding" value="Branding"> Branding</input><br/><br/>
+                            <input type="checkbox" name="comercial" value="Comercial (aumento de ticket)"> Comercial (aumento de ticket)</input><br/><br/>
+                            <input type="checkbox" name="fluxo" value="Comercial (aumento de fluxo)"> Comercial (aumento de fluxo)</input><br/><br/>
+                            <input type="checkbox" name="encantamento" value="Encantamento"> Encantamento</input><br/><br/>
+                            <input type="checkbox" name="reativacao" value="Reativação"> Reativação</input><br/><br/><br/>
+                           
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

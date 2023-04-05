@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="romaneio" name="Kami Forms - Input Nome">
+        <title>Controle de Romaneio</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Controle de Romaneio</h3>
+                        <p><i>
+                        Preencha o formulário ao lado para criar um Controle de Romaneio.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/romaneio" enctype="multipart/form-data">
+                            <label for="romaneio">*Empresa:</label><br></br>
+                            <select name="company_name" required='required'>
+                                <option value='' ></option>
+                                <t t-foreach="companyes" t-as="company">
+                                    <option t-att-value="company.id" t-esc="company.name"/>
+                                </t>
+                            </select><br></br><br></br>
+
+                            <label for="romaneio">*Número do Romaneio:</label><br></br>
+                            <input type="number" name="number_romaneio"/><br></br><br></br>
+
+                            <label for="data-saida">Data de Saída:</label><br></br>
+                            <input type="date" id="data-saida" name="exit_date" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required="required"/><br></br><br></br>
+
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

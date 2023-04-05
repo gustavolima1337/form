@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cursoskamico" name="Kami Forms - Input Nome">
+        <title>Cursos KAMI CO.</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Formulário de Cadastro do Aluno</h3>
+                        <p><i>
+                        Use esse espaço para falar sobre este formulário ou sobre sua empresa.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/cursoskamico" enctype="multipart/form-data">
+                            <p>Preencha corretamente os dados desse formulário para que o cadastro do Aluno seja realizado com sucesso!</p>
+                            <div class="form-group">
+                                <label style='display:block'>Nome do Vendedor:</label>
+                                <input required='True' type='text' name='nomeVendedor'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Nome completo do Aluno:</label>
+                                <input required='True' type='text' name='nomeAluno'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>WhatsApp do Aluno:</label>
+                                <input type='tel' name='whatsappAluno'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Email do Aluno:</label>
+                                <input required='True' type='Email' name='emallAluno'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Classifique o Aluno</label>
+                                <input required='True' type='radio' id='Cabeleireiro' name='classificacaoAluno' value='Cabeleireiro'/>
+                                <label for='Cabeleireiro'>Cabeleireiro</label>
+                                <input required='True' type='radio' id='Cabeleireiro e Dono de Salão' name='classificacaoAluno' value='Cabeleireiro e Dono de Salão'/>
+                                <label for='Cabeleireiro e Dono de Salão'>Cabeleireiro e Dono de Salão</label>
+                                <input required='True' type='radio' id='Auxiliar de Cabeleireiro' name='classificacaoAluno' value='Auxiliar de Cabeleireiro'/>
+                                <label for='Auxiliar de Cabeleireiro'>Auxiliar de Cabeleireiro</label>
+                                <input required='True' type='radio' id='Gerente' name='classificacaoAluno' value='Gerente'/>
+                                <label for='Gerente'>Gerente</label>
+                                <input required='True' type='radio' id='Dono de Salão' name='classificacaoAluno' value='Dono de Salão'/>
+                                <label for='Dono de Salão'>Dono de Salão</label>
+                                <input required='True' type='radio' id='Recepcionista' name='classificacaoAluno' value='Recepcionista'/>
+                                <label for='Recepcionista'>Recepcionista</label>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Qual nome do Salão que o Aluno trabalha?</label>
+                                <input type='text' name='salaoAluno'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Qual região fica o salão?:</label>
+                                <input required='True' type='text' name='regiaoSalao'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Código do cliente no UNO</label>
+                                <input required='True' type='text' name='codClientUno'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Código do pedido do cliente no UNO</label>
+                                <input type='text' name='codPedidoUno'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Anexe aqui o pdf do Espelho do pedido</label>
+                                <input type='file' name='task_attachment' multiple='True'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Qual a forma de pagamento?</label>
+                                <input required='True' type='radio' id='PIX' name='formaPagamento' value='PIX'/>
+                                <label for='PIX'>PIX</label>
+                                <input required='True' type='radio' id='Boleto' name='formaPagamento' value='Boleto'/>
+                                <label for='Boleto'>Boleto</label>
+                                <input required='True' type='radio' id='Cartão' name='formaPagamento' value='Cartão'/>
+                                <label for='Cartão'>Cartão</label>
+                                <input required='True' type='radio' id='Bonificado' name='formaPagamento' value='Bonificado'/>
+                                <label for='Bonificado'>Bonificado</label>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>A qual curso se refere?</label>
+                                <select required='True' name='cursoReferencia'>
+                                    <option value='null'>Escolha uma opção</option>
+                                    <option value='Transform Art PORTUGAL (Vendas Brasil) | 19 e 20 de março 2023'>Transform'Art PORTUGAL (Vendas Brasil) | 19 e 20 de março 2023</option>
+                                    <option value='SP - Henry I Curso de mechas I 27/02/2023'>SP - Henry I Curso de mechas I 27/02/2023</option>
+                                    <option value='SP - Workshop Workstation / Home Care I  13/02/2023'>SP - Workshop Workstation / Home Care I  13/02/2023</option>
+                                    <option value='SP - Workshop Workstation / Home Care I  14/02/2023'>SP - Workshop Workstation / Home Care I  14/02/2023</option>
+                                    <option value='RJ - TRUSS COLOR I 27/02/2023'>RJ - TRUSS COLOR I 27/02/2023</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Observação</label>
+                                <textarea name='observacao' rows="4" cols="50"></textarea>
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

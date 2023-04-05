@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="forms_success_page">
+    <title id="page-title">Solicitação Enviada!</title>
+    <t t-call="website.layout">      
+      <div class="container my-2">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="container">
+              <div class="row">
+                <div id="page-left" class="card w-100 m-2">
+                  <img 
+                    class="card-img-top" t-attf-src="/kami_form/static/description/icon.png"
+                  />    
+                  <h4 id="page-card-title" class="card-header">Concluído!</h4>
+                  <div class="card-body">
+                    <p id="page-card-description" class="card-text"><i>Sua solicitação foi enviada com sucesso!</i></p>
+                  </div>  
+                </div>
+              </div>          
+            </div>        
+          </div>
+          <div class="col-sm-8">
+            <div class="container">
+              <div class="row">
+                <div id="page-right" class="card w-100 m-2">
+                  <h4 id="page-right-head" class="card-header">Solicitação Enviada!</h4>
+                  <div id="page-right-body" class="card-body">
+                    <p class="card-text">
+                      <i>
+                        Sua solicitação foi enviada com sucesso! Aguarde o retorno da equipe responsavél por este atendimento.
+                      </i>
+                    </p>
+                  </div>
+                  <div id="page-right-footer" class="card-footer">
+                    <a role="button" t-att-href="web_base_url" class="btn btn-secondary mb-2">
+                      Voltar ao Portal do Representante
+                    </a>
+                  </div>                  
+                </div>
+              </div>          
+            </div>
+          </div>
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="criativo" name="Kami Forms - Input Nome">
+        <title>Criativo KAMI CO.</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Criativo KAMI CO.</h3>
+                        <p><i>
+                        Utilize este formulário para abrir solicitações para a equipe de criação da KAMI CO.!
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/criativo" enctype="multipart/form-data">
+                            <label for="title_solicitation">*Título da solicitação</label><br/>
+                            <input required="required" placeholder="Como chamar a solicitação?" type="text" name="notification_title"/><br/><br/><br/>
+
+
+                            <label for="">*Essa solicitação se refere a qual empresa KAMI?</label><br/>
+                            <input required="required" type="radio" name="solicitation" value="KAMI for Business"> KAMI for Business</input><br/><br/>
+                            <input required="required" type="radio" name="solicitation" value="KAMI CO. São Paulo"> KAMI CO. São Paulo</input><br/><br/>
+                            <input required="required" type="radio" name="solicitation" value="KAMI CO. Rio de Janeiro"> KAMI CO. Rio de Janeiro</input><br/><br/>
+                            <input required="required" type="radio" name="solicitation" value="KAMI CO. Rio Grande do Sul"> KAMI CO. Rio Grande do Sul</input><br/><br/>
+                            <input required="required" type="radio" name="solicitation" value="KAMI CO. Portugal"> KAMI CO. Portugal</input><br/><br/>
+                            <input required="required" type="radio" name="solicitation" value="KAMI CO. Portugal"> Hair Pro</input><br/><br/><br/>
+                            
+                            
+
+                            <label for="">Tipo da solicitação:</label><br/>
+                            <input placeholder="Qual é o formato do material que você está solicitando?" type="text" name="notification_type"/><br/><br/><br/>
+
+                            <label for="">*Onde deseja compartilhá-la?:</label><br/>
+                            <input type="checkbox" name="Email" value="Email"> Email</input><br/><br/>
+                            <input type="checkbox" name="Mídiassociais" value="Mídias sociais"> Mídias sociais</input><br/><br/>
+                            <input type="checkbox" name="Youtube" value="Youtube"> Youtube</input><br/><br/>
+                            <input type="checkbox" name="WhatsApp" value="WhatsApp"> WhatsApp</input><br/><br/>
+                            <input type="checkbox" name="Stories" value="Stories"> Stories</input><br/><br/>
+                            <input type="checkbox" name="Materialimpresso" value="Material impresso"> Material impresso</input><br/><br/>
+                            <input type="checkbox" name="Workplace" value="Workplace"> Workplace</input><br/><br/>
+                            <input type="checkbox" name="LinkedIn" value="LinkedIn"> LinkedIn</input><br/><br/>
+                            <input type="checkbox" name="Outroslocais" value="Outros locais"> Outros locais</input><br/><br/><br/>
+
+                            <label for="">Inserir a medida desejada do arquivo (Opcional):</label><br/>
+                            <input placeholder="PADRÃO = 1:1" type="text" name="file_measurement"/><br/><br/><br/>
+
+                            <label for="">*Inserir Logotipo:</label><br/>
+                            <input type="checkbox" name="KAMICO." value="KAMI CO."> KAMI CO.</input><br/><br/>
+                            <input type="checkbox" name="SBMP" value="KAMI CO. Smart Beauty Made by People"> KAMI CO. Smart Beauty Made by People</input><br/><br/>
+                            <input type="checkbox" name="TRUSSHair" value="TRUSS Hair"> TRUSS Hair</input><br/><br/>
+                            <input type="checkbox" name="HairSPA" value="Hair SPA"> Hair SPA</input><br/><br/>
+                            <input type="checkbox" name="HairPro" value="Hair Pro"> Hair Pro</input><br/><br/>
+                            <input type="checkbox" name="LogodoCliente" value="Logo do Cliente"> Logo do Cliente</input><br/><br/>
+                            <input type="checkbox" name="Outros" value="Outros"> Outros</input><br/><br/>
+                            <input type="checkbox" name="SemLogo" value="Não inserir logo"> Não inserir logo</input><br/><br/><br/>
+
+                            <label>*Detalhes da solicitação:</label><br/>
+                            <textarea required="required" id="solicitation_detail" name="solicitation_detail" rows="6" cols="50"></textarea><br></br><br></br>
+
+
+                            <label>Anexos</label><br/>
+                            <p>Adicionar Anexo</p><input required="required" type="file" name="aditional_archives" multiple="true"/><br></br><br></br>
+
+                            <label>Prazo de entrega estimado:</label>
+                            <p>Escolha a data que você gostaria de ter o material em mãos. Mas atenção: podemos levar mais tempo que o esperado para realizar sua solicitação, 
+                            por isso pedimos compreensão perante as demandas! Acompanhe sua solicitação via e-mail.</p>
+                            <input type="datetime-local" name="data_prazo"/><br/><br/><br/>
+
+                            <label>*Seu nome:</label><br/>
+                            <input required="required" type="text" name="yourname"/><br/><br/><br/>
+
+                            <label>*Seu e-mail:</label><br/>
+                            <input required="required" type="email" name="yourmail"/><br/><br/><br/>
+
+                            <label for="celular">Celular (WhatsApp):</label><br/>
+                            <input type="tel" name="celular" id="celular" pattern="[0-9]{2}[0-9]{8,9}" required="required"/><br/><br/><br/>
+
+                            <label>*Por onde você deseja receber o arquivo final?:</label><br/>
+                            <input required="required" type="checkbox" value="E-mail" name="email">  E-mail</input><br/><br/>
+                            <input required="required" type="checkbox" value="WhatsApp" name="whatsapp">  WhatsApp</input><br/><br/><br/>
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

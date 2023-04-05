@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="educacionalmvp" name="Kami Forms - Input Nome">
+        <title>Lançamento Educacional MVP</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Marketing de Conteúdo</h3>
+                        <p><i>
+                        Adicione solicitações ao time de Marketing de Conteúdo.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/educacionalmvp" enctype="multipart/form-data">
+                            <label>*Atividade:</label><br/>
+                            <input required="required" type='text' name='atividade'/><br/><br/><br/>
+
+
+                            <label>*Descrição da atividade</label><br/>
+                            <textarea required="required" id="descricaoAtividade" name="descricaoAtividade" rows="4" cols="50">
+                            </textarea><br/><br/><br/>
+
+                            <label>*Data preferida para entrega</label><br/>
+                            <input required="required" type='date' name='dataEntrega'></input><br/><br/><br/>
+
+                            <label>*Prioridade:</label><br/>
+                            <input type="radio" value="Alta" name="priority">Alta</input><br/><br/>
+                            <input type="radio" value="Média" name="priority">Média</input><br/><br/>
+                            <input type="radio" value="Baixa" name="priority">Média</input><br/><br/><br/>
+
+
+
+                            <label>Anexo</label><br/>
+                            <input multiple="true" type='file' name='anexo'></input><br/><br/><br/>
+
+                            <label>Responsável pela atividade</label><br/>
+                            <select name="responsavel">
+                                <option value='null'>Selecione uma opção</option>
+                                <t t-foreach="users" t-as="user">
+                                    <option t-att-value="user.id" t-esc="user.name"/>
+                                </t>
+                            </select> <br/><br/><br/>  
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

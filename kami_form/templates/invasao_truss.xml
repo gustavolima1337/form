@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invasaotruss" name="Kami Forms - Input Nome">
+        <title>Notificações Invasão TRUSS</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <img 
+                      class="img-thumbnail rounded float-left"
+                      t-attf-src='kami_form/static/description/icon.png'
+                      style="height: 270px; width: 270px;"
+                    />
+                    <h3>Gerenciamento de problemas de TI
+                    </h3>
+                    <p><i>
+                        Preencha os campos solicitados no formulário.
+                    </i></p>
+                  </div>      
+                  <div class="col-sm-8">
+
+                    <form method="post" action="/invasaotruss" enctype="multipart/form-data">
+                        <label for="date">Data de Recebimento:</label><br/>
+                        <input type="datetime-local" name="dataRecebimento"/><br/><br/><br/>
+
+                        <label for="notification_type">*Tipo Notificação:</label><br/>
+                        <input type="checkbox" value="Invasão de região" name="region_invasion"> Invasão de região</input><br/>
+                        <input type="checkbox" value="Venda indevida" name="invalid_sell"> Venda indevida</input><br/><br/><br/>
+
+                        <label for="date">*Empresa Notificada:</label><br/>
+                        <input type="checkbox" value="Movement" name="Movement"> Movement</input><br/>
+                        <input type="checkbox" value="New Hauss" name="NewHauss"> New Hauss</input><br/>
+                        <input type="checkbox" value="Rio de Janeiro" name="RiodeJaneiro"> Rio de Janeiro</input><br/><br/><br/>
+                        
+                        <label for="date">Prazo de Resposta:</label><br/>
+                        <input type="datetime-local" name="Prazo"/><br/><br/><br/>
+
+                        <label for="date">*Número ''OCTADESK'':</label><br/>
+                        <input name="octadesk_number" type="text" required="required"/><br/><br/><br/>
+
+                        <label for="date">*Local onde o produto foi encontrado:</label><br/>
+                        <input name="found_location" type="text" required="required"/><br/><br/><br/>
+
+                        <label for="date">*Nome do Cliente:</label><br/>
+                        <input name="client_name" type="text" required="required"/><br/><br/><br/>
+
+                        <label for="date">Prioridade:</label><br/>
+                        <input name="priority" value="Baixa" type="radio"> Baixa</input><br/><br/>
+                        <input name="priority" value="Média" type="radio"> Média</input><br/><br/>
+                        <input name="priority" value="Alta" type="radio"> Alta</input><br/><br/>
+                        <input name="priority" value="Urgente" type="radio"> Urgente</input><br/><br/><br/>
+
+                        <label for="date">*Anexo e-mail da notificação:</label><br/>
+                        <p>Adicionar novos arquivos</p><input required="required" type="file" name="aditional_archives" multiple="true"/><br></br><br></br>
+
+                        <input class="btn btn-primary" type="submit" value="Enviar"/>  
+                        
+                    </form>
+                </div>
+            </div>
+          </div>
+        </t>
+    </template>
+</odoo>

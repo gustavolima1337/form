@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="kamitest" name="Kami Forms - Input Nome">
+        <title>Abertura de Chamados</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Suporte KAMI CO.</h3>
+                        <p><i>
+                            Preencha o formulário com as informações necessárias para dar início ao processo de suporte.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/kamitest" enctype="multipart/form-data">
+
+                            <label>Selecione o tipo do chamado:</label><br/>
+                            <select id="types" class="form-control" name="types" required='required' onchange="mostrarCampoAdicional()">
+                                <t t-foreach="types" t-as="type">
+                                    <option t-att-value="type.id" t-esc="type.name"/>
+                                </t>
+                            </select><br/><br/>
+
+                            <label>Categoria:</label><br/>
+                            <select class="form-control" id="categories" name="categories" required="True" onchange="mostrarCampoAdicional()">
+                                <t t-foreach="categories" t-as="cat">
+                                    <option t-att-value="cat.id" t-esc="cat.name"/>
+                                </t>
+                            </select><br/>
+
+                        
+                            
+                            <label>Solicitante:</label><br/>
+                            <select class="form-control" id="responsible" name="responsible" required='required'>
+                                <option value=''></option>
+                                <t t-foreach="users" t-as="user">
+                                    <option t-att-value="user.id" t-esc="user.name"/>
+                                </t>
+                            </select><br/>
+
+                            <label>Assunto:</label><br/>
+                            <input type="text" class="form-control" name="subject" required="True"/><br/>
+
+                            <label>Este problema impede completamente o seu trabalho?</label><br/>
+                            <input type="radio" name="priority1" value="Não" onchange="document.getElementById('priority').style.display = 'block';
+                            "> Não</input><br/>
+                            <input type="radio" name="priority1" value="Alta - 2 horas" onchange="document.getElementById('priority').style.display = 'none';"> Sim</input><br/><br/>
+
+                            <div id="priority" style="display:none;">
+                                <label>Selecione a prioridade:</label><br/>
+                                <input type="radio" name="priority" value="Média - 24 horas"> Média - 24 horas</input><br/>
+                                <input type="radio" name="priority" value="Baixa - 72 horas"> Baixa - 72 horas</input><br/><br/>
+                            </div>
+
+                            <div id="file" style="display:block">
+                                <label>Adicionar Anexo: </label><br/>
+                                <input name="attachment" id="attachment" type="file" multiple="multiple"/><br/><br/>
+                            </div>
+
+                            <label>Descrição:</label><br/>
+                            <textarea name="description" rows="6" cols="50" required="True"/><br/><br/>
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

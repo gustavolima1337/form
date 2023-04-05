@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="planejamentocampanhamarketing" name="Kami Forms - Input Nome">
+        <title>Nova requisição de fachada</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"/>
+                        <h3>Requisição de fachada</h3>
+                        <p><i>
+                            Preencha o formulário ao lado para criar uma nova requisição de fachada.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/planejamentocampanhamarketing" enctype="multipart/form-data">
+                            <div>
+                                <label>Nome da campanha</label><br/>
+                                <input type='text' name='nomeCampanha'></input>
+                            </div><br/>
+                            <div>
+                                <label>Tipos de Campanha</label><br/>
+                                <select name='tipoCampanha'>
+                                    <option value='null' name='campanha'>Escolha uma opção</option>
+                                    <option value='Lançamento'>Lançamento</option>
+                                    <option value='Branding'>Branding</option>
+                                    <option value='Comercial (aumento de ticket)'>Comercial (aumento de ticket)</option>
+                                    <option value='Comercial (aumento de fluxo)'>Comercial (aumento de fluxo)</option>
+                                    <option value='Encantamento'>Encantamento</option>
+                                    <option value='Reativação'>Reativação</option>
+                                </select>
+                            </div><br/>
+                            <div>
+                                <label>Ano</label><br/>
+                                <input type='radio' id='2021' name='ano' value='2021'/>
+                                <label for='2021'>2021</label>
+                                <input type='radio' id='2022' name='ano' value='2022'/>
+                                <label for='2022'>2022</label>
+                                <input type='radio' id='2023' name='ano' value='2023'/>
+                                <label for='2023'>2023</label>
+                            </div><br/>
+                            <div>
+                                <label>Briefing da campanha</label><br/>
+                                <textarea id="briefing" name="briefing" rows="4" cols="50">
+                                </textarea>
+                            </div><br/>
+                            <div>
+                                <label>periodo</label><br/>
+                                <input type='radio' id='1_trimestre' name='periodo' value='1_trimestre'/>
+                                <label for='1_trimestre'>1º Trimestre</label>
+                                <input type='radio' id='2_trimestre' name='periodo' value='2_trimestre'/>
+                                <label for='2_trimestre'>2º Trimestre</label>
+                                <input type='radio' id='3_trimestre' name='periodo' value='3_trimestre'/>
+                                <label for='3_trimestre'>3º Trimestre</label>
+                                <input type='radio' id='4_trimestre' name='periodo' value='4_trimestre'/>
+                                <label for='4_trimestre'>4º Trimestre</label>
+                            </div><br/>
+                            <div>
+                                <label>Vencimento do Planejamento</label><br/>
+                                <input id="vencimentoPlanejamento" type="date" name='dataVencimento'></input>
+                            </div><br/>
+                            <input class="btn btn-primary" type="submit" value="Enviar"/> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

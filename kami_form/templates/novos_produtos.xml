@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="novoproduto" name="Kami Forms - Input Nome">
+        <title>Solicitação</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"/>
+                        <h3>Solicitação</h3>
+                        <p><i>
+                            Preencha as informações do formulário para encaminhar sua solicitação.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/novoproduto" enctype="multipart/form-data">
+                            <label>*Qual o tipo de cadastro ?</label><br/>
+                            <input required="required" type="radio" value="Lançamento" name="c_type"> Lançamento</input><br/>
+                            <input required="required" type="radio" value="Atualização" name="c_type"> Atualização</input><br/><br/>
+
+                            <label>*Estoque colocado no sistema ?</label><br/>
+                            <input type="radio" value="Sim" name="estoque"> Sim</input><br/>
+                            <input type="radio" value="Não" name="estoque"> Não</input><br/><br/>
+
+                            <label>*cod produto fabricante</label><br/>
+                            <input type="text" placeholder="Digite aqui..." required="required" name="cod_produto"/><br/><br/>
+
+                            <label>*descricao comercial</label><br/>
+                            <input type="text" placeholder="Digite aqui..." required="required" name="desc_comercial"/><br/><br/>
+
+                            <label>*codigo do fabricante no sistema</label><br/>
+                            <input type="text" placeholder="Digite aqui..." required="required" name="cod_fabricante"/><br/><br/>
+
+                            <label>*nome do fabricante</label><br/>
+                            <input type="text" placeholder="Digite aqui..." required="required" name="nome_fabricante"/><br/><br/>
+
+                            <label>*grupo de produto</label><br/>
+                            <input type="text" placeholder="Digite aqui..." required="required" name="grupo_prod"/><br/><br/>
+
+                            <label>codigo ean</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="ean"/><br/><br/>
+
+                            <label>marca</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="marca"/><br/><br/>
+
+                            <label>tipo</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="tipo"/><br/><br/>
+                            
+                            <label>*profissional</label><br/>
+                            <input type="radio" value="Sim" name="profissional"> Sim</input><br/>
+                            <input type="radio" value="Não" name="profissional"> Não</input><br/><br/>
+                            
+                            <label>*ncm</label><br/>
+                            <input type="text" placeholder="Digite aqui..." required="required" name="ncm"/><br/><br/>
+
+                            <label>custo</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="custo"/><br/><br/>
+
+                            <label>tabela de preço</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="price_table"/><br/><br/>
+
+                            <label>valor de venda</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="sell_price"/><br/><br/>
+
+                            <label>empresa de cadastro</label><br/>
+                            <input type="text" placeholder="Digite aqui..." name="empresa_c"/><br/><br/>
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

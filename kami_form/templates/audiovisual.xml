@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="audiovisual" name="Kami Forms - Input Nome">
+        <title>Solicitações de Marketing</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Solicitações de Marketing</h3>
+                        <p><i>
+                        Utilize este formulário para abrir solicitações para a equipe de marketing!
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/audiovisual" enctype="multipart/form-data">
+                            <label for="inputNome">*Seu nome:</label><br></br>
+                            <select name="partner_name" required='required'>
+                                <option value='' ></option>
+                                <t t-foreach="partners" t-as="partner">
+                                    <option t-att-value="partner.id" t-esc="partner.name"/>
+                                </t>
+                            </select><br></br><br></br>
+
+                            <label for="inputNome">*Departamento:</label><br></br>
+                            <input type="text" name="department" required="required"/><br></br><br></br>
+
+                            <label for="inputNome">*Título da solicitação:</label><br></br>
+                            <input type="text" name="title_solicitation" required="required"/><br></br><br></br>
+
+                            <label>*Demanda</label><br/>
+                            <input required="required" type="radio" name="demand" value="Edição" onchange="document.getElementById('captation_date').style.display = 'none';document.getElementById('captation_date_edition').style.display = 'none'"> Edição</input><br/>
+                            <input required="required" type="radio" name="demand" value="Captação" onchange="document.getElementById('captation_date').style.display = 'block';document.getElementById('captation_date_edition').style.display = 'none'"> Captação</input><br/>
+                            <input required="required" type="radio" name="demand" value="Captação e Edição" onchange="document.getElementById('captation_date_edition').style.display = 'block';document.getElementById('captation_date').style.display = 'none'"> Captação e Edição</input><br/>
+
+                            <div id="captation_date" style="display:none">
+                                <label>Data da captação:</label>
+                                <input type="date" name="captation_date"/>
+                            </div>
+
+                            <div id="captation_date_edition" style="display:none">
+                                <label>Data da captação:</label>
+                                <input type="date" name="captation_date_edition"/>
+                            </div><br/><br/>
+                            
+                            <label>*Precisa de fotos?</label><br/>
+                            <input required="required" type="radio" name="need_photo" value="Sim">Sim</input><br/>
+                            <input required="required" type="radio" name="need_photo" value="Não">Não</input><br/><br/>
+                            
+                            <label>*Qual resolução?</label><br/>
+                            <input required="required" type="radio" name="resolution" value="Full HD">Full HD</input><br/>
+                            <input required="required" type="radio" name="resolution" value="4 K">4 K</input><br/><br/>
+
+                            <label>Essa solicitação se refere a qual empresa KAMI?</label><br/>
+                            <input required="required" type="radio" name="kami_company" value="KAMI for Business"> KAMI for Business</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="KAMI CO. São Paulo"> KAMI CO. São Paulo</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="KAMI CO. Rio de Janeiro"> KAMI CO. Rio de Janeiro</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="KAMI CO. Rio Grande do Sul"> KAMI CO. Rio Grande do Sul</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="KAMI CO. Portugal"> KAMI CO. Portugal</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="Beautyline"> Beautyline</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="Kami Cabeleireiros"> Kami Cabeleireiros</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="Kiosk L'Oreal"> Kiosk L'Oreal</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="Hair Pro"> Hair Pro</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="Grupo KAMI"> Grupo KAMI</input><br/>
+                            <input required="required" type="radio" name="kami_company" value="Medical Clean"> Medical Clean</input><br/><br/>
+
+                            <label>Proporção do arquivo:</label><br/>
+                            <input type="checkbox" name="file_proportion1" value="Quadrado 1:1 (1080x1080)"> Quadrado 1:1 (1080x1080)</input><br/>
+                            <input type="checkbox" name="file_proportion2" value="Vertical 9:16 (1080x1920)"> Vertical 9:16 (1080x1920)</input><br/>
+                            <input type="checkbox" name="file_proportion3" value="Horizontal 16:9 (1920x1080)"> Horizontal 16:9 (1920x1080)</input><br/>
+                            <input type="checkbox" name="file_proportion4" value="IG 4:5 (1080x1350)"> IG 4:5 (1080x1350)</input><br/><br/>
+
+                            <label>Tempo de vídeo estimado?</label><br/>
+                            <input required="required" type="text" name="time_video"/><br/><br/>
+
+                            <label>Onde deseja compartilhá-la?</label><br/>
+                            <input type="checkbox" name="share1" value="Youtube"> Youtube</input><br/>
+                            <input type="checkbox" name="share2" value="Facebook"> Facebook</input><br/>
+                            <input type="checkbox" name="share3" value="Instagram"> Instagram</input><br/>
+                            <input type="checkbox" name="share4" value="WhatsApp"> WhatsApp</input><br/>
+                            <input type="checkbox" name="share5" value="Stories"> Stories</input><br/>
+                            <input type="checkbox" name="share6" value="LinkedIn"> LinkedIn</input><br/>
+                            <input type="checkbox" name="share7" value="Outros locais"> Outros locais</input><br/>
+                            <input type="checkbox" name="share8" value="Reels"> Reels</input><br/><br/>
+
+                            <label>*Trilha ou referência de trilha:</label><br/>
+                            <input placeholder="eletrônica, ou link referência" required="required" type="text" name="trilha"/><br/><br/>
+
+
+                            <label>*Lettering/GC:</label><br/>
+                            <input required="required" type="radio" name="Lettering" value="Sim" onchange="document.getElementById('Letteringarea').style.display = 'block'"> Sim</input><br/>
+                            <input required="required" type="radio" name="Lettering" value="Não" onchange="document.getElementById('Letteringarea').style.display = 'none'"> Não</input><br/><br/>
+
+                            <div id="Letteringarea" style="display:none">
+                                <label>O que?:</label><br/>
+                                <textarea id="Letteringtext" name="Letteringtext" rows="6" cols="50"></textarea><br></br><br></br>
+                            </div>
+
+                            <label>*Incluir logotipo?:</label><br/>
+                            <input required="required" type="radio" name="logotipo" value="Sim" onchange="document.getElementById('logo_div').style.display = 'block'"> Sim</input><br/>
+                            <input required="required" type="radio" name="logotipo" value="Não" onchange="document.getElementById('logo_div').style.display = 'none'"> Não</input><br/><br/>    
+                            
+                            <div id="logo_div" style="display:none">
+                                <label>*Onde?:</label><br/>
+                                <input type="radio" name="logo_radio" value="Centro">Centro</input><br/>
+                                <input type="radio" name="logo_radio" value="Centro superior">Centro superior</input><br/>
+                                <input type="radio" name="logo_radio" value="Centro inferior">Centro inferior</input><br/>
+                                <input type="radio" name="logo_radio" value="Inferior direito">Inferior direito</input><br/>
+                                <input type="radio" name="logo_radio" value="Inferior esquerdo">Inferior esquerdo</input><br/>
+                                <input type="radio" name="logo_radio" value="Superior direito">Superior direito</input><br/>
+                                <input type="radio" name="logo_radio" value="Superior esquerdo">Superior esquerdo</input><br/><br/>
+                            </div>
+
+                            <label>Animação?:</label><br/>
+                            <input required="required" type="radio" name="animation" value="Sim" onchange="document.getElementById('animation_div').style.display = 'block'">Sim</input><br/>
+                            <input required="required" type="radio" name="animation" value="Não" onchange="document.getElementById('animation_div').style.display = 'none'">Não</input><br/><br/>
+
+                            <div id="animation_div" style="display:none">
+                                <label>Referência:</label><br/>
+                                <textarea id="reference" name="reference" rows="6" cols="50"></textarea><br></br><br></br>
+                            </div>
+
+                            <label>Anexos? Sinta-se a vontade para anexar referências que nos ajudem a criar sua solicitação.</label><br></br><input type="file" name="attachment"/><br></br><br></br>
+
+                            <label>Detalhes da solicitação?:</label><br/>
+                            <textarea id="solicitation_detail" name="solicitation_detail" rows="6" cols="50" required='required'></textarea><br></br><br></br>
+
+                            <label>Briefing/Roteiro:</label><br/>
+                            <textarea id="briefing" name="briefing" rows="6" cols="50" required='required'></textarea><br></br><br></br>
+
+                            <label>Prazo de entrega estimado:</label><br/>
+                            <input required="required" type="datetime-local" name="prazo_data"/><br/><br/><br/>
+                            
+                            <input type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

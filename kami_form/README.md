@@ -1,0 +1,2 @@
+/fachada - /audiovisual - /malatecnica - /planejamentocampanhamarketing - /romaneio - /invasaotruss - /criativo - /educacionalmvp - /promotoriafreelancer(finalizar) - /campanhamkt - /solicitacaoredesocial - /cursoskamico - 
+/formulariorh - /educacionalcontent - /novoproduto - /trademarketing

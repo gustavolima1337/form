@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="trademarketing" name="Kami Forms - Input Nome">
+        <title>Nova requisição de fachada</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Requisição de fachada</h3>
+                        <p><i>
+                        Preencha o formulário ao lado para criar uma nova requisição de fachada.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/trademarketing" enctype="multipart/form-data">
+                            <label for="inputNome">*Nome do Vendedor:</label><br/>
+                            <select name="seller_name" required='required'>
+                                <option value=''></option>
+                                <t t-foreach="users" t-as="user">
+                                    <option t-att-value="user.id" t-esc="user.name"/>
+                                </t>
+                            </select><br></br><br></br>
+
+                            <label for="inputNome">*Nome do Cliente:</label><br/>
+                            <select name="client_name" required='required'>
+                                <option value='' ></option>
+                                <t t-foreach="partners" t-as="partner">
+                                    <option t-att-value="partner.id" t-esc="partner.name"/>
+                                </t>
+                            </select><br/><br/>
+
+                            <label for="inputNome">Código do cliente no UNO:</label><br/>
+                            <input type="number" name="uno_code"/><br/><br/>
+
+                            <label for="inputNome">*Título da solicitação:</label><br/>
+                            <p>Dê um nome a sua solicitação para facilitar a identificação do assunto em nossa caixa de entrada!</p>
+                            <input type="text" name="solicitation_tipe"/><br/><br/>
+
+                            <label for="inputNome">*Departamento solicitante:</label><br/>
+                            <input type="radio" value="Comercial Salão" name="department">Comercial Salão</input><br/>
+                            <input type="radio" value="Comercial Vajero" name="department">Comercial Vajero</input><br/>
+                            <input type="radio" value="Marketing" name="department">Marketing</input><br/><br/>
+
+                            <label>*Regional solicitante:</label><br/>
+                            <input type="radio" value="SP" name="SP">SP</input><br/>
+                            <input type="radio" value="RGS" name="RGS">RGS</input><br/>
+                            <input type="radio" value="RJ" name="RJ">RJ</input><br/>
+                            <input type="radio" value="Brasil" name="Brasil">Brasil</input><br/>
+                            <input type="radio" value="Reino Unido" name="Reino Unido">Reino Unido</input><br/>
+                            <input type="radio" value="Portugal" name="Portugal">Portugal</input><br/><br/>
+
+                            <label>*Qual assunto se refere?:</label><br/>
+                            <input type="radio" value="Visibilidade" name="Visibilidade">Visibilidade</input><br/>
+                            <input type="radio" value="Campanha de marketing" name="Campanha de marketing">Campanha de marketing</input><br/>
+                            <input type="radio" value="Evento" name="Evento">Evento</input><br/>
+                            <input type="radio" value="Material de Apoio/Merchandising" name="Material de Apoio/Merchandising">Material de Apoio/Merchandising</input><br/><br/><br/>
+
+                            <label>*Descreva sua solicitação ao departamento de trade marketing:</label><br/>
+                            <p>Detalhe o máximo possível para que a nossa esquipe consiga prosseguir com sua solicitação</p>
+                            <textarea required="required" id="trade_marketing" name="trade_marketing" rows="6" cols="50"></textarea><br/><br/><br/>
+
+                            <label>*Prazo desejado para entrega da sua solicitação:</label><br/>
+                            <p>IMPORTANTE: isso norteará a prioridade da devolutiva da sua solicitação, podendo sofrer atrasos mediante a data escolhida em detrimento de demanda já existente no setor. Manteremos você informado!</p>
+                            <input required="required" type="datetime-local" name="data_vencimento"/><br/><br/><br/>
+                            
+                            
+
+                            <label>Anexos (Opicional)</label><br/>
+                            <input type='file' name='task_attachment' multiple='True'></input><br/><br/><br/>
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>

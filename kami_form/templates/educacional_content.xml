@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="educacionalcontent">
+        <title>Formulário - Educacional (Content)</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img
+                            class="img-thumbnail rounded float-left"
+                            t-attf-src='kami_form/static/description/icon.png'
+                            style="height: 270px; width: 270px;"
+                        />
+                        <h3>Solicitação para Redes Sociais</h3>
+                        <p>
+                            <i>
+                                Adicione solicitações ao time de Marketing de Conteúdo.
+                            </i>
+                        </p>
+                    </div>
+                    <div class="col-sm-8">
+
+                        <form class="col-md-6" t-attf-action="/educacionalcontent" method="post"
+                            enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label style='display:block'>Capa (HEADLINE)</label>
+                                <input required='True' type='text' name='capaHeadline'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Onde será publicado?</label>
+                                <input required='True' type='radio' id='feed' name='pulicacao'
+                                    value='Feed' />
+                                <label for='feed'>Feed</label>
+                                <input required='True' type='radio' id='storires' name='pulicacao'
+                                    value='Stories' />
+                                <label for='stories'>Stories</label>
+                                <input required='True' type='radio' id='IGTV' name='pulicacao'
+                                    value='IGTV' />
+                                <label for='IGTV'>IGTV</label>
+                                <input required='True' type='radio' id='Reels' name='pulicacao'
+                                    value='Reels' />
+                                <label for='Reels'>Reels</label>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Formato:</label>
+                                <input required='True' type='radio' id='estatico' name='formato'
+                                    value='Estática' />
+                                <label for='estatico'>Estática</label>
+                                <input required='True' type='radio' id='video' name='formato'
+                                    value='Vídeo' />
+                                <label for='video'>Vídeo</label>
+                                <input required='True' type='radio' id='carrossel' name='formato'
+                                    value='Carrossel' />
+                                <label for='carrossel'>Carrossel</label>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Selo</label>
+                                <input required='True' type='radio' id='mkt' name='selo' value='MKT' />
+                                <label for='mkt'>MKT</label>
+                                <input required='True' type='radio' id='dh' name='selo' value='DH' />
+                                <label for='dh'>DH</label>
+                                <input required='True' type='radio' id='conteudo' name='selo'
+                                    value='Conteúdo' />
+                                <label for='conteudo'>Conteúdo</label>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Referências</label>
+                                <input type='file' name='task_attachment_referencias' multiple='True'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Briefing Tema</label>
+                                <textarea id="briefingTema" name="briefingTema" rows="4" cols="50">
+                                </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>labela</label>
+                                <textarea id="labela" name="labela" rows="4" cols="50">
+                                </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Briefing do Criativo</label>
+                                <textarea id="briefingCriativo" name="briefingCriativo" rows="4"
+                                    cols="50">
+                                </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Imagem Tratada ou com Layout - FEED</label>
+                                <input type='file' name='task_attachment_layout' multiple='True'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Imagem para STORY</label>
+                                <input type='file' name='story_task_attachment' multiple='True'></input>
+                            </div>
+                            <div class="form-group">
+                                <label style='display:block'>Data da Publicação</label>
+                                <input type='date' name='dataPublicacao'></input>
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Enviar" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

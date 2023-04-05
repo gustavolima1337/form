@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="mala_tecnica">
+    <title>Solicitação de Mala Técnica</title>
+    <t t-call="website.layout">
+      <div class="mt-5 mb-5 container">
+        <div class="row">
+          <div class="col-sm-4">
+            <img 
+              class="img-thumbnail rounded float-left"
+              t-attf-src="kami_form/static/description/icon.png"
+              style="height: 270px; width: 270px;"
+            />
+            <h3>Mala Técnica</h3>
+            <p><i>
+              Formulário para solicitação de envio de mala técnica.
+            </i></p>
+          </div>      
+          <div class="col-sm-8">            
+            <form t-attf-action="/malatecnica" method="post" enctype="multipart/form-data">
+
+                <label>*Departamento:</label><br/>
+                <input required="required" type="radio" value="BackOffice Comercial" name="backoffice"> BackOffice Comercial</input><br/><br/>
+                
+                <label>*SOLICITAÇÃO:</label><br/>
+                <input required="required" type="radio" value="MALA TÉCNICA VENDEDOR" name="mala"> MALA TÉCNICA VENDEDOR</input><br/>
+                <input required="required" type="radio" value="MALA TÉCNICA - TECNICO" name="mala"> MALA TÉCNICA - TECNICO</input><br/><br/>
+
+                <label>*Observações / Solicitação</label><br/>
+                <textarea required="required" id="comments" name="comments" rows="6" cols="50"></textarea><br></br><br></br>
+
+                <label for="responsible">Responsável:</label><br/>
+                <select required="required" class="form-control" name="responsible" id="responsible">
+                    <option value="null">Selecione uma opção</option>
+                      <t t-foreach="users" t-as="user">
+                    <option t-att-value="user.id" t-esc="user.name" />
+                    </t>
+                </select><br/><br/>
+
+                <input class="btn btn-primary" type="submit" value="Enviar" />            
+            </form>          
+          </div>
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>

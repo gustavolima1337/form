@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="kami_sm_partner_view_form_cat" model="ir.ui.view">
+    <field name="name">res.partner.form.category</field>
+    <field name="model">helpdesk.ticket.category</field>
+    <field name="inherit_id" ref="helpdesk_mgmt.view_helpdesk_category_form"/>
+    <field name="arch" type="xml">
+        <xpath
+          expr="//field[@name='name']"
+          position="after"
+        >
+        <field name="type_ids"/>
+        </xpath>
+    </field>
+  </record>
+
+  <record id="kami_sm_partner_view_form_type" model="ir.ui.view">
+    <field name="name">res.partner.form.type</field>
+    <field name="model">helpdesk.ticket.type</field>
+    <field name="inherit_id" ref="helpdesk_type.helpdesk_ticket_type_form"/>
+    <field name="arch" type="xml">
+        <xpath
+          expr="//field[@name='name']"
+          position="after"
+        >
+        <field name="category_ids"/>
+        </xpath>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <record id="kami_form.digital_invite_project" model="project.project">
+            <field name="name">Arte Para Convites Digitais</field>
+        </record>
+    </data>
+    <data noupdate="1">
+      <record id="kami_form.facade_project" model="project.project">
+          <field name="name">Arte Para Fachadas</field>
+      </record>
+  </data>
+  <data noupdate="1">
+    <record id="kami_form.mala_tecnica_project" model="project.project">
+        <field name="name">Mala Técnica</field>
+    </record>
+  </data>
+  <data noupdate="1">
+    <record id="kami_form.audiovisual_kamico" model="project.project">
+        <field name="name">Audiovisual KAMI CO.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.controle_romaneio" model="project.project">
+        <field name="name">Controle de Romaneio.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.invasao_truss" model="project.project">
+        <field name="name">Notificações Invasão TRUSS.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.criativo_kami" model="project.project">
+        <field name="name">Criativo KAMI CO.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.lancamento_educacional_mvp" model="project.project">
+        <field name="name">Marketing de Conteúdo.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.campanhas_mkt" model="project.project">
+        <field name="name">Calendário de Campanhas MKT.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.solicitacao_redes_sociais" model="project.project">
+        <field name="name">Solicitação para Redes Sociais.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.cursos_kamico_project" model="project.project">
+        <field name="name">Cursos KAMI CO.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+    <record id="kami_form.solicitacao_rh_project" model="project.project">
+        <field name="name">Formulário RH.</field>
+    </record>
+  </data>
+
+  <data noupdate="1">
+      <record id="kami_form.educacional_content_project" model="project.project">
+          <field name="name">Educacional (Content)</field>
+      </record>
+  </data>
+
+  <data noupdate="1">
+      <record id="kami_form.novo_produto" model="project.project">
+          <field name="name">Novo Produto.</field>
+      </record>
+  </data>
+</odoo>

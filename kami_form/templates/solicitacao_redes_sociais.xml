@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="solicitacaoredesocial" name="Kami Forms - Input Nome">
+        <title>Solicitação para Redes Sociais</title>
+        <t t-call="website.layout">
+            <div class="mt-5 mb-5 container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail rounded float-left" t-attf-src='kami_form/static/description/icon.png' style="height: 270px; width: 270px;"
+                        />
+                        <h3>Solicitação para Redes Sociais</h3>
+                        <p><i>
+                        Adicione solicitações ao time de Marketing de Conteúdo.
+                        </i></p>
+                    </div>
+                    <div class="col-sm-8">
+                        <form method="post" action="/solicitacaoredesocial" enctype="multipart/form-data">
+                            <label>*Assunto</label><br/>
+                            <input placeholder="Exemplo: Dia dos namorados" required="required" type="text" name="subject"/><br/><br/><br/>
+
+                            <label>*Onde será publicado?</label><br/>
+                            <input type="radio" value="@trusshair.kamico" name="publi" required="required">@trusshair.kamico</input><br/><br/>
+                            <input type="radio" value="@trussportugal" name="publi" required="required">@trussportugal</input><br/><br/>
+                            <input type="radio" value="YouTube" name="publi" required="required">YouTube</input><br/><br/>                       
+                            <input type="radio" value="Workplace" name="publi" required="required">Workplace</input><br/><br/>  
+                            <input type="radio" value="LinkedIn" name="publi" required="required">LinkedIn</input><br/><br/>
+                            <input type="radio" value="@kamiforbusiness" name="publi" required="required">@kamiforbusiness</input><br/><br/><br/>
+
+                            <label>Briefing</label><br/>
+                            <textarea rows='8' cols='40' name='briefing'></textarea><br/><br/><br/> 
+
+                            <label>Referências</label><br/>
+                            <p>Adicionar Anexo</p><input type="file" name="aditional_archives_reference" multiple="true"/><br/><br/><br/>
+
+                            <label>Legenda</label><br/>
+                            <textarea rows='8' cols='40' name='legenda'></textarea><br/><br/><br/>
+
+                            <label>Imagem Tratada ou com Layout - FEED</label>
+                            <p>Publicar post com este anexo</p><input  type="file" name="aditional_archives_layout" multiple="true"/><br/><br/><br/>
+
+                            <label>Imagem para STORY</label>
+                            <p>Adicionar Anexo</p><input type="file" name="aditional_archives_story" multiple="true"/><br/><br/><br/>
+
+                            <label>Data da Publicação</label><br/>
+                            <input type="date" name="pud_date"/><br/><br/><br/>
+
+
+                            <input class="btn btn-primary" type="submit" value="Enviar"/>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>          
+    </template>
+</odoo>
